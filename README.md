@@ -1,4 +1,8 @@
-# electron-quick-start
+# 땡글사이트용 웹앱
+
+일렉트론 사용 
+초기 경로 https://www.ddengle.com
+윈도우용 바이너리 추가 
 
 **Clone and run for a quick way to see Electron in action.**
 
