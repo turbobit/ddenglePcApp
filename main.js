@@ -1,22 +1,30 @@
 // Modules to control application life and create native browser window
-const {app, BrowserWindow} = require('electron')
+const { app, BrowserWindow } = require('electron')
 const path = require('path')
 
-function createWindow () {
+function createWindow() {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
+    autoHideMenuBar: true,
+    icon: path.join(__dirname, 'assets/icons/win/500x261.png'),
     webPreferences: {
+      allowRunningInsecureContent:true,
       preload: path.join(__dirname, 'preload.js')
     }
   })
 
+  mainWindow.maximize();
+
+  // Load a remote URL
+  mainWindow.loadURL('https://www.ddengle.com')
+
   // and load the index.html of the app.
-  mainWindow.loadFile('index.html')
+  //mainWindow.loadFile('index.html')
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
+
+  mainWindow.show();
 }
 
 // This method will be called when Electron has finished

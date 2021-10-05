@@ -1,22 +1,50 @@
 {
-  "name": "electron-quick-start",
+  "name": "ddenglepcapp",
   "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "description": "ddengle",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "pack": "electron-builder",
+    "packs": "npm run pack-win && npm run pack-osx",
+    "pack-win": "electron-builder --windows",
+    "pack-osx": "electron-builder --mac"
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
     "Electron",
-    "quick",
-    "start",
-    "tutorial",
-    "demo"
+    "ddengle"
   ],
-  "author": "GitHub",
+  "author": "turbobit",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^15.1.0"
+    "electron": "^15.1.0",
+    "electron-builder": "^22.11.7"
+  },
+  "build": {
+    "productName": "ddenglePcApp",
+    "appId": "ddenglePcApp",
+    "mac": {
+      "target": [
+        "default"
+      ]
+    },
+    "dmg": {
+      "title": "ddenglePcApp"
+    },
+    "win": {
+      "icon": "assets/icons/win/500x261.png",
+      "target": [
+        "zip",
+        "nsis"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  },
+  "dependencies": {
+    "run": "^1.4.0"
   }
 }
