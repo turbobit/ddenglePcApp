@@ -18,7 +18,7 @@
   "author": "turbobit",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^15.1.1",
+    "electron": "^21.3.0",
     "electron-builder": "^22.11.7"
   },
   "build": {
